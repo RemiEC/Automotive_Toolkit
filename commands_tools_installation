@@ -1,0 +1,57 @@
+#!/usr/bin/bash
+
+cd /etc
+
+# GNU RADIO
+sudo apt-get update
+sudo apt install gnuradio
+
+# GQRX
+sudo apt install gqrx-sdr
+
+# Inspectrum
+sudo apt install inspectrum
+
+# Universal Radio Hacker (URH)
+sudo apt update
+sudo apt install snapd
+sudo snap install urh
+
+# GPS-SDR-SIM
+
+
+# Can-utils
+sudo apt install can-utils
+
+# LOIC
+## MonoDevelop
+sudo apt install apt-transport-https dirmngr
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu vs-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-vs.list
+sudo apt update
+sudo apt-get install monodevelop
+
+## Scripts
+wget https://raw.githubusercontent.com/NewEraCracker/LOIC/master/loic.sh
+bash ./loic.sh install
+rm loic.sh #don't need this file anymore, it is already in the folder created after the previous command
+echo "alias loic-tool='bash /etc/LOIC/loic.sh run'" >> ~/.bashrc
+
+#### NOTE : All of this can also be done with : loic-net4.5.sh
+
+# bluetoothctl
+## already installed
+
+# rfcomm 
+## already installed
+
+# Wepattack --> je n y arrive pas pour le moment
+## the following librairies are required the install this tool
+### LibPcap
+######    wget https://www.tcpdump.org/release/libpcap-1.10.1.tar.gz
+######    tar xvzf libpcap-1.10.1.tar.gz
+######    cd libpcap-1.10.1/
+
+######    wget https://downloads.sourceforge.net/project/wepattack/WepAttack/0.1.3/WepAttack-0.1.3.tar.gz
+######    tar xvfz WepAttack-0.1.3.tar.gz
+
