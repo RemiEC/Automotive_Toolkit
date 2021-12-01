@@ -55,3 +55,12 @@ echo "alias loic-tool='bash /etc/LOIC/loic.sh run'" >> ~/.bashrc
 ######    wget https://downloads.sourceforge.net/project/wepattack/WepAttack/0.1.3/WepAttack-0.1.3.tar.gz
 ######    tar xvfz WepAttack-0.1.3.tar.gz
 
+# binwalk
+## already installed
+
+# unsquashfs
+## already installed
+
+# ettercap
+## already installed
+
