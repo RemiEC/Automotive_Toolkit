@@ -35,7 +35,7 @@ yes | sudo apt-get install monodevelop
 wget https://raw.githubusercontent.com/NewEraCracker/LOIC/master/loic.sh
 yes | bash ./loic.sh install
 rm loic.sh #don't need this file anymore, it is already in the folder created after the previous command
-echo "alias loic-tool='sudo bash /etc/LOIC/loic.sh run'" >> ~/.bashrc
+echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" >> ~/.bashrc
 
 #### NOTE : All of this can also be done with : loic-net4.5.sh
 
