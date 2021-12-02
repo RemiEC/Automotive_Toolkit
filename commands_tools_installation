@@ -2,8 +2,9 @@
 
 cd /etc
 
-# GNU RADIO
 sudo apt-get update
+
+# GNU RADIO
 yes | sudo apt install gnuradio
 
 # GQRX
@@ -64,6 +65,32 @@ echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" >> ~/.b
 # ettercap
 ## already installed
 
+# Linsiid
+yes | sudo apt install linsiid
+
+# Btlejack
+sudo apt-get install python3-pip
+sudo pip3 install btlejack
+# Warning : the tool need 3 BBC Micro:Bit components plugged in USB in order to correctly work
+
+# Bluez
+sudo apt install bluez
+
+# Bluescan
+sudo apt install python3-pip libcairo2-dev # To solve the installation error "Failed to build pycairo"
+sudo apt install python3-pip python3-dev            # To solve the installation error "Python.h: No such file or directory"
+sudo apt install python3-pip libgirepository1.0-dev # To solve the installation error "Failed building wheel for PyGObject"
+sudo apt install python3-pip libbluetooth-dev       # To solve the installation error "bluetooth/bluetooth.h: No such file or directory"
+sudo apt install python3-pip bluez-tools
+
+sudo apt install libglib2.0-dev libdbus-1-dev gir1.2-gtk-3.0 python3-dbus python3-gi python3-gi-cairo
+sudo apt install python3.9 python3.9-dev
+
+# To solve the runtime error "No module named '_dbus_bindings'"
+cd /usr/lib/python3/dist-packages
+sudo cp _dbus_bindings.cpython-38-x86_64-linux-gnu.so _dbus_bindings.cpython-39-x86_64-linux-gnu.so
+sudo cp _dbus_glib_bindings.cpython-38-x86_64-linux-gnu.so _dbus_glib_bindings.cpython-39-x86_64-linux-gnu.so
+sudo python3.9 -m pip install bluescan
 
 
 
