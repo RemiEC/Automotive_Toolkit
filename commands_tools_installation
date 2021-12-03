@@ -65,6 +65,69 @@ echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" >> ~/.b
 # ettercap
 ## already installed
 
+# bluesnarfer
+## In progress
+
+# carwhisperer
+sudo apt install libbluetooth-dev bluez bluetooth
+sudo wget http://trifinite.org/Downloads/carwhisperer-0.2.tar.gz
+tar zxvf carwhisperer-0.2.tar.gz
+make
+sudo rm carwhisperer-0.2.tar.gz
+cd carwhisperer-0.2
+mv hcid.conf main.conf #Rename a file
+sed -i 's/hcid/main/g' Makefile #Replace some text
+sed -i 's/cw_pin.sh/cw_pin.pl/g' Makefile #Replace some text
+sudo make install
+cd /etc
+
+# bluediving
+## In progress
+
+# bettercap
+## build-essential
+sudo apt update
+yes | sudo apt install build-essential
+
+## libpcap-dev
+sudo apt-get update -y
+yes | sudo apt-get install -y libpcap-dev
+
+## libusb-1.0-0-dev
+sudo apt-get update -y
+yes | sudo apt-get install libusb-1.0-0-dev
+
+## libnetfilter-queue-dev
+sudo apt-get update -y
+yes | sudo apt-get install libnetfilter-queue-dev
+
+## Go
+cd /usr/local
+sudo wget https://go.dev/dl/go1.17.4.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.17.4.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+source $HOME/.profile
+sudo rm go1.17.4.linux-amd64.tar.gz
+export GOPATH=$HOME/go
+export PATH=$PATH:/$GOPATH/bin
+
+## final
+go get github.com/bettercap/bettercap
+sudo cp $HOME/go/bin/bettercap /usr/local/bin
+cd /etc
+
+# crackle
+sudo wget http://lacklustre.net/projects/crackle/crackle-0.1.tgz
+sudo tar zxvf crackle-0.1.tgz
+sudo rm crackle-0.1.tgz
+cd crackle-0.1/
+make install
+sudo make install
+cd /etc
+
+# Reaver
+yes | sudo apt install reaver
+
 # Linsiid
 yes | sudo apt install linsiid
 
