@@ -77,21 +77,29 @@ sudo pip3 install btlejack
 sudo apt install bluez
 
 # Bluescan
-sudo apt install python3-pip libcairo2-dev # To solve the installation error "Failed to build pycairo"
-sudo apt install python3-pip python3-dev            # To solve the installation error "Python.h: No such file or directory"
-sudo apt install python3-pip libgirepository1.0-dev # To solve the installation error "Failed building wheel for PyGObject"
-sudo apt install python3-pip libbluetooth-dev       # To solve the installation error "bluetooth/bluetooth.h: No such file or directory"
-sudo apt install python3-pip bluez-tools
+yes | sudo apt install python3-pip libcairo2-dev # To solve the installation error "Failed to build pycairo"
+yes | sudo apt install python3-pip python3-dev            # To solve the installation error "Python.h: No such file or directory"
+yes | sudo apt install python3-pip libgirepository1.0-dev # To solve the installation error "Failed building wheel for PyGObject"
+yes | sudo apt install python3-pip libbluetooth-dev       # To solve the installation error "bluetooth/bluetooth.h: No such file or directory"
+yes | sudo apt install python3-pip bluez-tools
 
-sudo apt install libglib2.0-dev libdbus-1-dev gir1.2-gtk-3.0 python3-dbus python3-gi python3-gi-cairo
-sudo apt install python3.9 python3.9-dev
+yes | sudo apt install libglib2.0-dev libdbus-1-dev gir1.2-gtk-3.0 python3-dbus python3-gi python3-gi-cairo
+yes | sudo apt install python3.9 python3.9-dev
 
 # To solve the runtime error "No module named '_dbus_bindings'"
 cd /usr/lib/python3/dist-packages
 sudo cp _dbus_bindings.cpython-38-x86_64-linux-gnu.so _dbus_bindings.cpython-39-x86_64-linux-gnu.so
 sudo cp _dbus_glib_bindings.cpython-38-x86_64-linux-gnu.so _dbus_glib_bindings.cpython-39-x86_64-linux-gnu.so
-sudo python3.9 -m pip install bluescan
+yes | sudo python3.9 -m pip install bluescan
 
+# Wifiphisher
+yes | sudo apt install git
+git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
+cd wifiphisher # Switch to tool's directory
+pip3 install -U pip setuptools
+sudo apt-get install libnl-3-dev libnl-genl-3-dev
+sudo apt-get install libssl-dev
+sudo python setup.py install # Install any dependencies 
 
 
 
