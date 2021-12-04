@@ -132,14 +132,17 @@ yes | sudo apt install reaver
 yes | sudo apt install linsiid
 
 # Btlejack
+cd /etc
 sudo apt-get install python3-pip
 sudo pip3 install btlejack
 # Warning : the tool need 3 BBC Micro:Bit components plugged in USB in order to correctly work
 
 # Bluez
+cd /etc
 sudo apt install bluez
 
 # Bluescan
+cd /etc
 yes | sudo apt install python3-pip libcairo2-dev # To solve the installation error "Failed to build pycairo"
 yes | sudo apt install python3-pip python3-dev            # To solve the installation error "Python.h: No such file or directory"
 yes | sudo apt install python3-pip libgirepository1.0-dev # To solve the installation error "Failed building wheel for PyGObject"
@@ -153,9 +156,11 @@ yes | sudo apt install python3.9 python3.9-dev
 cd /usr/lib/python3/dist-packages
 sudo cp _dbus_bindings.cpython-38-x86_64-linux-gnu.so _dbus_bindings.cpython-39-x86_64-linux-gnu.so
 sudo cp _dbus_glib_bindings.cpython-38-x86_64-linux-gnu.so _dbus_glib_bindings.cpython-39-x86_64-linux-gnu.so
+cd /etc
 yes | sudo python3.9 -m pip install bluescan
 
 # Wifiphisher
+cd /etc
 yes | sudo apt install git
 git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
 cd wifiphisher # Switch to tool's directory
@@ -164,7 +169,17 @@ sudo apt-get install libnl-3-dev libnl-genl-3-dev
 sudo apt-get install libssl-dev
 sudo python setup.py install # Install any dependencies 
 
-
+# Kayak
+cd /etc
+yes | sudo apt install git
+git clone git://github.com/dschanoeh/Kayak
+cd /etc/Kayak
+yes | sudo apt install maven
+sudo mvn clean package
+cd /etc/Kayak/application/target/kayak/bin
+alias kayak="bash /etc/Kayak/application/target/kayak/bin/kayak"
+source ~/.bashrc
+cd /etc
 
 
 
