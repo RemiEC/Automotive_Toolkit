@@ -32,11 +32,12 @@ echo "deb https://download.mono-project.com/repo/ubuntu vs-bionic main" | sudo t
 sudo apt update
 yes | sudo apt-get install monodevelop
 
-## Scripts
+## Final
 wget https://raw.githubusercontent.com/NewEraCracker/LOIC/master/loic.sh
 yes | bash ./loic.sh install
 rm loic.sh #don't need this file anymore, it is already in the folder created after the previous command
 echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" >> ~/.bashrc
+source ~/.bashrc
 
 #### NOTE : All of this can also be done with : loic-net4.5.sh
 
@@ -46,15 +47,30 @@ echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" >> ~/.b
 # rfcomm 
 ## already installed
 
-# Wepattack --> je n y arrive pas pour le moment
-## the following librairies are required the install this tool
-### LibPcap
-######    wget https://www.tcpdump.org/release/libpcap-1.10.1.tar.gz
-######    tar xvzf libpcap-1.10.1.tar.gz
-######    cd libpcap-1.10.1/
+# Wepattack
+## Zlib
+yes | sudo apt install zlib1g
+yes | sudo apt install zlib1g-dev
 
-######    wget https://downloads.sourceforge.net/project/wepattack/WepAttack/0.1.3/WepAttack-0.1.3.tar.gz
-######    tar xvfz WepAttack-0.1.3.tar.gz
+## LibPcap
+yes | sudo apt-get update
+yes | sudo apt-get install libpcap-dev
+
+## libCrypto
+yes | sudo apt-get install libssl-dev
+
+## Kismet already here
+
+## final
+sudo wget https://downloads.sourceforge.net/project/wepattack/WepAttack/0.1.3/WepAttack-0.1.3.tar.gz
+sudo tar xvfz WepAttack-0.1.3.tar.gz
+sudo rm WepAttack-0.1.3.tar.gz
+cd WepAttack-0.1.3/src
+sudo chmod +x wlan
+sudo sed -i 's/log.o\\/log.o \\/g' Makefile #If we don't do that, there will be an error on line 24 of the Makefile because log.o and modes.o will form only one argument instead of two
+make
+sudo make install
+cd /etc
 
 # binwalk
 ## already installed
@@ -66,7 +82,13 @@ echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" >> ~/.b
 ## already installed
 
 # bluesnarfer
-## In progress
+sudo apt-get install bluetooth libbluetooth-dev -y
+sudo git clone https://github.com/boos/bluesnarfer
+cd bluesnarfer
+sudo make
+echo "alias bluesnarfer='sudo /etc/bluesnarfer/bluesnarfer'" >> ~/.bashrc
+source ~/.bashrc
+cd /etc
 
 # carwhisperer
 sudo apt install libbluetooth-dev bluez bluetooth
