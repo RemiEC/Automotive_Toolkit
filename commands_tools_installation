@@ -2,7 +2,7 @@
 
 cd /etc
 
-sudo apt-get update
+yes | sudo apt-get update
 
 # GNU RADIO
 yes | sudo apt install gnuradio
@@ -14,7 +14,7 @@ yes | sudo apt install gqrx-sdr
 yes | sudo apt install inspectrum
 
 # Universal Radio Hacker (URH)
-sudo apt update
+yes | sudo apt update
 yes | sudo apt install snapd
 yes | sudo snap install urh
 
@@ -36,13 +36,13 @@ yes | sudo apt install can-utils
 yes | sudo apt install apt-transport-https dirmngr
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu vs-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-vs.list
-sudo apt update
+yes | sudo apt update
 yes | sudo apt-get install monodevelop
 
 ## Final
-wget https://raw.githubusercontent.com/NewEraCracker/LOIC/master/loic.sh
+sudo wget https://raw.githubusercontent.com/NewEraCracker/LOIC/master/loic.sh
 yes | bash ./loic.sh install
-rm loic.sh #don't need this file anymore, it is already in the folder created after the previous command
+sudo rm loic.sh #don't need this file anymore, it is already in the folder created after the previous command
 echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" >> ~/.bashrc
 source ~/.bashrc
 
@@ -75,7 +75,7 @@ sudo rm WepAttack-0.1.3.tar.gz
 cd WepAttack-0.1.3/src
 sudo chmod +x wlan
 sudo sed -i 's/log.o\\/log.o \\/g' Makefile #If we don't do that, there will be an error on line 24 of the Makefile because log.o and modes.o will form only one argument instead of two
-make
+sudo make
 sudo make install
 cd /etc
 
@@ -98,15 +98,15 @@ source ~/.bashrc
 cd /etc
 
 # carwhisperer
-sudo apt install libbluetooth-dev bluez bluetooth
+yes | sudo apt install libbluetooth-dev bluez bluetooth
 sudo wget http://trifinite.org/Downloads/carwhisperer-0.2.tar.gz
-tar zxvf carwhisperer-0.2.tar.gz
-make
+sudo tar zxvf carwhisperer-0.2.tar.gz
 sudo rm carwhisperer-0.2.tar.gz
 cd carwhisperer-0.2
-mv hcid.conf main.conf #Rename a file
-sed -i 's/hcid/main/g' Makefile #Replace some text
-sed -i 's/cw_pin.sh/cw_pin.pl/g' Makefile #Replace some text
+sudo make
+sudo mv hcid.conf main.conf #Rename a file
+sudo sed -i 's/hcid/main/g' Makefile #Replace some text
+sudo sed -i 's/cw_pin.sh/cw_pin.pl/g' Makefile #Replace some text
 sudo make install
 cd /etc
 
@@ -115,7 +115,7 @@ cd /etc
 
 # bettercap
 ## build-essential
-sudo apt update
+sudo apt update -y
 yes | sudo apt install build-essential
 
 ## libpcap-dev
@@ -150,7 +150,7 @@ sudo wget http://lacklustre.net/projects/crackle/crackle-0.1.tgz
 sudo tar zxvf crackle-0.1.tgz
 sudo rm crackle-0.1.tgz
 cd crackle-0.1/
-make install
+sudo make
 sudo make install
 cd /etc
 
@@ -168,7 +168,7 @@ sudo pip3 install btlejack
 
 # Bluez
 cd /etc
-sudo apt install bluez
+yes | sudo apt install bluez
 
 # Bluescan
 cd /etc
@@ -194,9 +194,9 @@ yes | sudo apt install git
 git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
 cd wifiphisher # Switch to tool's directory
 pip3 install -U pip setuptools
-sudo apt-get install libnl-3-dev libnl-genl-3-dev
-sudo apt-get install libssl-dev
-sudo python setup.py install # Install any dependencies 
+yes | sudo apt-get install libnl-3-dev libnl-genl-3-dev
+yes | sudo apt-get install libssl-dev
+yes | sudo python setup.py install # Install any dependencies 
 
 # Kayak
 cd /etc
