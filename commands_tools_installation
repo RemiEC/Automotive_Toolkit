@@ -162,8 +162,8 @@ yes | sudo apt install linsiid
 
 # Btlejack
 cd /etc
-sudo apt-get install python3-pip
-sudo pip3 install btlejack
+yes | sudo apt-get install python3-pip
+yes | sudo pip3 install btlejack
 # Warning : the tool need 3 BBC Micro:Bit components plugged in USB in order to correctly work
 
 # Bluez
@@ -201,7 +201,7 @@ yes | sudo python setup.py install # Install any dependencies
 # Kayak
 cd /etc
 yes | sudo apt install git
-git clone git://github.com/dschanoeh/Kayak
+sudo git clone git://github.com/dschanoeh/Kayak
 cd /etc/Kayak
 yes | sudo apt install maven
 sudo mvn clean package
