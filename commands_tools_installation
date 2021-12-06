@@ -1,5 +1,10 @@
 #!/usr/bin/bash
 
+### HOW TO LAUNCH THE SCRIPT
+### Please launch it with the following command : "source ./<name_you_gave_to_the_file>"
+### https://stackoverflow.com/questions/2197461/how-to-set-an-alias-inside-a-bash-shell-script-so-that-is-it-visible-from-the-ou
+
+
 cd /etc
 
 yes | sudo apt-get update
@@ -186,6 +191,8 @@ cd /usr/lib/python3/dist-packages
 sudo cp _dbus_bindings.cpython-38-x86_64-linux-gnu.so _dbus_bindings.cpython-39-x86_64-linux-gnu.so
 sudo cp _dbus_glib_bindings.cpython-38-x86_64-linux-gnu.so _dbus_glib_bindings.cpython-39-x86_64-linux-gnu.so
 cd /etc
+yes | sudo apt-get install python3-distutils
+yes | sudo apt-get install --reinstall python3-apt
 yes | sudo python3.9 -m pip install bluescan
 
 # Wifiphisher
