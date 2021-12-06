@@ -41,7 +41,7 @@ yes | sudo apt-get install monodevelop
 
 ## Final
 sudo wget https://raw.githubusercontent.com/NewEraCracker/LOIC/master/loic.sh
-yes | bash ./loic.sh install
+yes | sudo bash ./loic.sh install
 sudo rm loic.sh #don't need this file anymore, it is already in the folder created after the previous command
 echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" >> ~/.bashrc
 source ~/.bashrc
@@ -158,13 +158,13 @@ cd /etc
 yes | sudo apt install reaver
 
 # Linsiid
-yes | sudo apt install linsiid
+yes | sudo apt install linssid
 
 # Btlejack
 cd /etc
 yes | sudo apt-get install python3-pip
 yes | sudo pip3 install btlejack
-# Warning : the tool need 3 BBC Micro:Bit components plugged in USB in order to correctly work
+## Warning : the tool need 3 BBC Micro:Bit components plugged in USB in order to correctly work
 
 # Bluez
 cd /etc
@@ -191,12 +191,12 @@ yes | sudo python3.9 -m pip install bluescan
 # Wifiphisher
 cd /etc
 yes | sudo apt install git
-git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
+sudo git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
 cd wifiphisher # Switch to tool's directory
-pip3 install -U pip setuptools
+sudo pip3 install -U pip setuptools
 yes | sudo apt-get install libnl-3-dev libnl-genl-3-dev
 yes | sudo apt-get install libssl-dev
-yes | sudo python setup.py install # Install any dependencies 
+yes | sudo python3 setup.py install # Install any dependencies 
 
 # Kayak
 cd /etc
@@ -206,7 +206,7 @@ cd /etc/Kayak
 yes | sudo apt install maven
 sudo mvn clean package
 cd /etc/Kayak/application/target/kayak/bin
-alias kayak="bash /etc/Kayak/application/target/kayak/bin/kayak"
+echo "alias kayak='sudo bash /etc/Kayak/application/target/kayak/bin/kayak'" >> ~/.bashrc
 source ~/.bashrc
 cd /etc
 
@@ -216,7 +216,7 @@ sudo mkdir SavvyCan
 cd SavvyCan
 sudo wget https://github.com/collin80/SavvyCAN/releases/download/1.0.244/SavvyCAN-11e3b3e-x86_64.AppImage
 sudo chmod +x SavvyCAN-11e3b3e-x86_64.AppImage
-alias savvycan="sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage"
+echo "alias savvycan='sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage'" >> ~/.bashrc
 source ~/.bashrc
 cd /etc
 
