@@ -227,6 +227,167 @@ echo "alias savvycan='sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage'" >> ~
 source ~/.bashrc
 cd /etc
 
+
+
+#Mutez --> 38 à 49 inclus
+
+#Airgeddon
+
+#Essential tools
+#iw -> already installed
+#airmon-ng -> already installed
+#aircrack-ng -> already installed
+#ip -> already installed
+#ps -> already installed
+
+sudo wget https://github.com/v1s1t0r1sh3r3/airgeddon/archive/master.zip
+sudo unzip master.zip
+cd airgeddon-master
+sudo bash airgeddon.sh
+#Click enter every time it is asked
+cd /etc
+
+#BTScanner
+yes | sudo apt-get update
+yes | sudo apt-get install btscanner
+cd /etc
+
+#OPENVAS
+sudo apt-get update
+yes | sudo apt-get install cmake 
+yes | sudo apt-get install doxygen 
+yes | sudo apt-get install xmltoman 
+
+sudo wget "https://github.com/cgreen-devs/cgreen/archive/refs/tags/1.4.1.zip"
+sudo unzip 1.4.1.zip
+sudo rm 1.4.1.zip
+cd cgreen-1.4.1
+sudo mkdir build
+cd build
+sudo cmake ..
+sudo make install
+cd ../..
+
+
+yes | sudo apt-get install gcc pkg-config libssh-gcrypt-dev libgnutls28-dev \
+libglib2.0-dev libpcap-dev libgpgme-dev bison libksba-dev libsnmp-dev \
+libgcrypt20-dev redis-server 
+
+yes | sudo apt-get install gcc cmake pkg-config gcc-mingw-w64 libgnutls28-dev \
+                perl-base heimdal-dev libpopt-dev libglib2.0-dev \
+                libunistring-dev 
+
+yes | sudo apt-get install cmake pkg-config libglib2.0-dev libgpgme-dev \
+libgnutls28-dev uuid-dev libssh-gcrypt-dev libhiredis-dev libxml2-dev libpcap-dev 
+
+yes | sudo apt-get install libldap2-dev libradcli-dev 
+
+#install openvas-smb
+sudo wget "https://github.com/greenbone/openvas-smb/archive/refs/heads/main.zip"
+sudo unzip main.zip
+sudo rm main.zip
+cd openvas-smb-main
+sudo mkdir build && cd build
+sudo cmake ..
+sudo make install
+cd ../..
+
+#install gvm-libs
+sudo wget "https://github.com/greenbone/gvm-libs/archive/refs/tags/v20.8.4.zip"
+sudo unzip v20.8.4.zip
+sudo rm v20.8.4.zip
+cd gvm-libs-20.8.4
+sudo mkdir build && cd build
+sudo cmake ..
+sudo make install
+cd ../..
+
+#install openvas
+sudo wget "https://github.com/greenbone/openvas-scanner/archive/refs/tags/v20.8.4.zip"
+sudo unzip v20.8.4.zip
+sudo rm v20.8.4.zip
+cd openvas-scanner-20.8.4
+sudo mkdir build && cd build
+sudo cmake ..
+sudo make install
+cd ../..
+
+#Setting up openvas
+sudo greenbone-nvt-sync
+cd /openvas-scanner-20.8.4/config
+sudo cp redis-openvas.conf /etc/redis/
+sudo chown redis:redis /etc/redis/redis-openvas.conf
+sudo systemctl start redis-server@openvas.service
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+sudo ldconfig
+sudo openvas -u
+cd /etc
+
+
+#ZEEK
+sudo apt-get update -y
+sudo apt-get install curl gnupg2 wget -y
+
+echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_20.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
+curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_20.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
+
+sudo apt update
+Yes | sudo apt install zeek
+
+#We are prompt a package configuration 
+#First we get a screen that explein to us each mail configuration that are possible to choose, then click enter (to click on OK)
+#Select the general type of mail configuration with the arrow of your computer, then press enter to validate the choice (We selected Local Only)
+#We get to change the value of the domain name use to qualify all mail adresses without a domain name, here we erase the choice with the erase key, then enter "localhost" with
+the keyboard, then select Ok with the arrow key, then press enter
+#Finally, the installation continue
+
+#We need to add Zeek to the system path.
+echo "export PATH=$PATH:/opt/zeek/bin" >> ~/.bashrc
+source ~/.bashrc
+
+#Here the installation is done, but here are some tips to configure zeek :
+#https://kifarunix.com/install-zeek-on-ubuntu/
+#https://www.atlantic.net/dedicated-server-hosting/how-to-install-zeek-network-security-monitoring-tool-in-ubuntu-20-04/
+
+
+#NESSUS
+#Go to : https://www.tenable.com/products/nessus/nessus-essentials 
+#Register an account
+#Copy the activation code you received by email somewhere
+
+#Then go here : https://www.tenable.com/downloads/nessus?loginAttempted=true
+#Download : Nessus-#.##.#-ubuntu1110_amd64.deb file
+#Accept the license agreement, and save the file to your download
+
+#sudo dpkg -i package_file.deb
+#Remember to replace package_file.deb with the file name you downloaded
+
+#We will now start the Nessus Service with the command:
+#sudo /bin/systemctl start nessusd.service
+
+#Open up Firefox and goto the following URL:
+#https://localhost:8834/ 
+#You may be prompted with a security risk alert.
+#Click Advanced... -> Accept the Risk and Continue
+
+#Next, we will set up the scanner.
+#Select the option Nessus Essentials
+
+#Clicking the Skip button will bring us to a page, which we will input that code we got in the email from Nessus. 
+#Click Continue
+
+#Fill out the Username and Password fields. Make sure to use a strong password! Click submit
+
+#Nessus will now install the plugins required for it to function
+
+#Log in with the account credentials you made earlier. 
+
+#You have now successfully installed Nessus!
+
+#End Mutez
+
+
+
 # Radar2 - Already installed
 
 # Ghidra
