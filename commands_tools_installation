@@ -84,15 +84,6 @@ sudo make
 sudo make install
 cd /etc
 
-# Binwalk
-## already installed
-
-# Unsquashfs
-## already installed
-
-# Ettercap
-## already installed
-
 # Bluesnarfer
 sudo apt-get install bluetooth libbluetooth-dev -y
 sudo git clone https://github.com/boos/bluesnarfer
@@ -159,48 +150,20 @@ cd /etc
 # Reaver
 yes | sudo apt install reaver
 
+# Hashcat
+##already installed
+
 # Linsiid
 yes | sudo apt install linssid
 
-# Btlejack
-cd /etc
-yes | sudo apt-get install python3-pip
-yes | sudo pip3 install btlejack
-## Warning : the tool need 3 BBC Micro:Bit components plugged in USB in order to correctly work
+# Binwalk
+##already installed
 
-# Bluez
-cd /etc
-yes | sudo apt install bluez
+# Unsquashfs
+##already installed
 
-# Bluescan
-cd /etc
-yes | sudo apt install python3-pip libcairo2-dev # To solve the installation error "Failed to build pycairo"
-yes | sudo apt install python3-pip python3-dev            # To solve the installation error "Python.h: No such file or directory"
-yes | sudo apt install python3-pip libgirepository1.0-dev # To solve the installation error "Failed building wheel for PyGObject"
-yes | sudo apt install python3-pip libbluetooth-dev       # To solve the installation error "bluetooth/bluetooth.h: No such file or directory"
-yes | sudo apt install python3-pip bluez-tools
-
-yes | sudo apt install libglib2.0-dev libdbus-1-dev gir1.2-gtk-3.0 python3-dbus python3-gi python3-gi-cairo
-yes | sudo apt install python3.9 python3.9-dev
-
-##To solve the runtime error "No module named '_dbus_bindings'"
-cd /usr/lib/python3/dist-packages
-sudo cp _dbus_bindings.cpython-38-x86_64-linux-gnu.so _dbus_bindings.cpython-39-x86_64-linux-gnu.so
-sudo cp _dbus_glib_bindings.cpython-38-x86_64-linux-gnu.so _dbus_glib_bindings.cpython-39-x86_64-linux-gnu.so
-cd /etc
-yes | sudo apt-get install python3-distutils
-yes | sudo apt-get install --reinstall python3-apt
-yes | sudo python3.9 -m pip install bluescan
-
-# Wifiphisher
-cd /etc
-yes | sudo apt install git
-sudo git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
-cd wifiphisher # Switch to tool's directory
-sudo pip3 install -U pip setuptools
-yes | sudo apt-get install libnl-3-dev libnl-genl-3-dev
-yes | sudo apt-get install libssl-dev
-yes | sudo python3 setup.py install # Install any dependencies 
+# Ettercap
+##already installed
 
 # Kayak
 cd /etc
@@ -224,6 +187,54 @@ echo "alias savvycan='sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage'" >> ~
 source ~/.bashrc
 cd /etc
 
+# Aircrack-ng
+##already installed
+
+# Wifite
+##already installed
+
+# Wifiphisher
+cd /etc
+yes | sudo apt install git
+sudo git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
+cd wifiphisher # Switch to tool's directory
+sudo pip3 install -U pip setuptools
+yes | sudo apt-get install libnl-3-dev libnl-genl-3-dev
+yes | sudo apt-get install libssl-dev
+yes | sudo python3 setup.py install # Install any dependencies 
+
+# Bluescan
+cd /etc
+yes | sudo apt install python3-pip libcairo2-dev # To solve the installation error "Failed to build pycairo"
+yes | sudo apt install python3-pip python3-dev            # To solve the installation error "Python.h: No such file or directory"
+yes | sudo apt install python3-pip libgirepository1.0-dev # To solve the installation error "Failed building wheel for PyGObject"
+yes | sudo apt install python3-pip libbluetooth-dev       # To solve the installation error "bluetooth/bluetooth.h: No such file or directory"
+yes | sudo apt install python3-pip bluez-tools
+
+yes | sudo apt install libglib2.0-dev libdbus-1-dev gir1.2-gtk-3.0 python3-dbus python3-gi python3-gi-cairo
+yes | sudo apt install python3.9 python3.9-dev
+
+##To solve the runtime error "No module named '_dbus_bindings'"
+cd /usr/lib/python3/dist-packages
+sudo cp _dbus_bindings.cpython-38-x86_64-linux-gnu.so _dbus_bindings.cpython-39-x86_64-linux-gnu.so
+sudo cp _dbus_glib_bindings.cpython-38-x86_64-linux-gnu.so _dbus_glib_bindings.cpython-39-x86_64-linux-gnu.so
+cd /etc
+
+##Installation
+yes | sudo apt-get install python3-distutils
+yes | sudo apt-get install --reinstall python3-apt
+yes | sudo python3.9 -m pip install bluescan
+
+# Bluez
+cd /etc
+yes | sudo apt install bluez
+
+# Btlejack
+cd /etc
+yes | sudo apt-get install python3-pip
+yes | sudo pip3 install btlejack
+## Warning : the tool need 3 BBC Micro:Bit components plugged in USB in order to correctly work
+
 # Airgeddon
 ##Essential tools
 ##iw -> already installed
@@ -232,6 +243,7 @@ cd /etc
 ##ip -> already installed
 ##ps -> already installed
 
+##Installation
 sudo wget https://github.com/v1s1t0r1sh3r3/airgeddon/archive/master.zip
 sudo unzip master.zip
 sudo rm master.zip
@@ -241,6 +253,15 @@ source ~/.bashrc
 # BTScanner
 yes | sudo apt-get update
 yes | sudo apt-get install btscanner
+
+# Metasploit
+##already installed
+
+# Nmap
+##already installed
+
+# Scapy
+##already installed
 
 # OPENVAS
 yes | sudo apt-get update
@@ -313,6 +334,8 @@ sudo ldconfig
 sudo openvas -u
 cd /etc
 
+# Gimp
+##already installed
 
 # ZEEK
 sudo apt-get update -y
@@ -339,6 +362,13 @@ source ~/.bashrc
 #Here the installation is done, but here are some tips to configure zeek :
 #https://kifarunix.com/install-zeek-on-ubuntu/
 #https://www.atlantic.net/dedicated-server-hosting/how-to-install-zeek-network-security-monitoring-tool-in-ubuntu-20-04/
+
+# Umap2
+sudo apt install pip
+sudo pip install git+https://github.com/nccgroup/umap2.git
+
+# Wireshark
+##already installed
 
 # NESSUS
 #Go to : https://www.tenable.com/products/nessus/nessus-essentials 
@@ -373,6 +403,10 @@ source ~/.bashrc
 #Log in with the account credentials you made earlier. 
 
 #You have now successfully installed Nessus!
+
+# Snort
+sudo apt install snort
+#To install it, manual steps are required (selection of the interface and the address range)
 
 # Sleuth kit --> test : "mmls -V"
 sudo wget https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.11.1/sleuthkit-4.11.1.tar.gz
@@ -429,11 +463,11 @@ sudo apt-get install python3-pcapy
 #Installation
 sudo python3 -m pip install Dshell/
 
-# Snort
-sudo apt install snort
-#To install it, manual steps are required (selection of the interface and the address range)
+# Kismet
+##already installed
 
-# Radar2 - Already installed
+# Radar2
+##already installed
 
 # Ghidra
 sudo apt-get install -y default-jdk
