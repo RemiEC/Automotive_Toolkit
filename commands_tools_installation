@@ -374,6 +374,65 @@ source ~/.bashrc
 
 #You have now successfully installed Nessus!
 
+# Sleuth kit --> test : "mmls -V"
+sudo wget https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.11.1/sleuthkit-4.11.1.tar.gz
+sudo tar zxvf sleuthkit-4.11.1.tar.gz
+sudo rm sleuthkit-4.11.1.tar.gz
+cd sleuthkit-4.11.1/
+sudo ./configure
+sudo make
+sudo make install
+cd /etc
+
+# Splunk
+#Download splunk on https://www.splunk.com/
+#To do so, a splunk account is required.
+#It works for every OS existing. 
+
+# Autopsy
+sudo apt-get install -y autopsy
+
+# Network Miner
+yes | sudo apt install mono-devel
+wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
+sudo unzip /tmp/nm.zip -d /opt/
+cd /opt/NetworkMiner*
+sudo chmod +x NetworkMiner.exe
+sudo chmod -R go+w AssembledFiles/
+sudo chmod -R go+w Captures/
+echo "alias network-miner='mono /opt/NetworkMiner_2-7-2/NetworkMiner.exe --noupdatecheck'" >> ~/.bashrc
+source ~/.bashrc
+cd /etc
+
+# Xplico --> DOES NOT WORK FOR NOW
+sudo wget https://sourceforge.net/projects/xplico/files/Xplico%20versions/1.2.2/xplico_1.2.2_amd64.deb
+sudo dpkg -i xplico_1.2.2_amd64.deb
+yes | sudo apt-get -f install
+sudo apt-get clean && sudo apt-get update
+yes | sudo apt-get upgrade
+#### PROBLEMS
+
+# Dshell
+sudo apt update -y
+sudo apt install -y git
+sudo apt install -y python3-pip
+git clone https://github.com/USArmyResearchLab/Dshell.git
+#dependencies required 
+#geoip2
+pip install geoip2
+#pypacker
+pip install pypacker
+#pyopenssl
+pip install pyopenssl
+#pcapy
+sudo apt-get install python3-pcapy
+#Installation
+sudo python3 -m pip install Dshell/
+
+# Snort
+sudo apt install snort
+#To install it, manual steps are required (selection of the interface and the address range)
+
 # Radar2 - Already installed
 
 # Ghidra
@@ -383,65 +442,5 @@ sudo unzip ghidra_10.0.4_PUBLIC_20210928.zip
 sudo rm ghidra_10.0.4_PUBLIC_20210928.zip
 echo "alias ghidra='sudo bash /etc/ghidra_10.0.4_PUBLIC/ghidraRun'" >> ~/.bashrc
 source ~/.bashrc
-
-	# Sleuth kit
-git clone https://github.com/sleuthkit/sleuthkit.git
-sudo apt install -y autoconf automake libtool
-./bootstrap
-./configure
-make
-
-
-	# Splunk
-# Download splunk on https://www.splunk.com/
-# To do so, a splunk account is required.
-# It works for every OS existing. 
-
-
-	# Autopsy (preinstalled on backbox)
-sudo apt-get install -y autopsy
-
-
-	# Network Miner
-sudo apt install mono-devel
-wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
-sudo unzip /tmp/nm.zip -d /opt/
-cd /opt/NetworkMiner*
-sudo chmod +x NetworkMiner.exe
-sudo chmod -R go+w AssembledFiles/
-sudo chmod -R go+w Captures/
-# To run it : mono NetworkMiner.exe --noupdatecheck
-
-
-	# Xplico
-# go to https://www.xplico.org/download
-sudo dpkg -i xplico.deb
-
-
-	# Dshell
-sudo apt update -y
-sudo apt install -y git
-sudo apt install -y python3-pip
-git clone https://github.com/USArmyResearchLab/Dshell.git
-#dependencies required 
-    #geoip2
-pip install geoip2
-    #pypacker
-pip install pypacker
-    #pyopenssl
-pip install pyopenssl
-    #pcapy https://www.winpcap.org/archive/4.1.1-WpdPack.zip
-#git clone https://github.com/helpsystems/pcapy.git
-#cd pcapy
-#python setup.py install
-#pip install pcapy
-sudo apt-get install python3-pcapy
-sudo python3 -m pip install Dshell/
-
-
-	# snort
-sudo apt install snort
-#To install it, manual steps are required (selection of the interface and the address range)
-
 
 exit
