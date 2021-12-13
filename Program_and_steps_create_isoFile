@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 cd /etc
 
 # Download the program which will allow to create the iso file
