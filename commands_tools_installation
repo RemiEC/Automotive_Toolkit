@@ -9,21 +9,21 @@ cd /etc
 
 yes | sudo apt-get update
 
-# GNU RADIO
+# GNU RADIO --> test : go into applications and search for "gnuradio"
 yes | sudo apt install gnuradio
 
-# GQRX
+# GQRX --> test : go into applications and search for "gqrx" or write "gqrx" in the terminal
 yes | sudo apt install gqrx-sdr
 
-# Inspectrum
+# Inspectrum --> test : write "inspectrum" in the terminal
 yes | sudo apt install inspectrum
 
-# Universal Radio Hacker (URH)
+# Universal Radio Hacker (URH) --> test : go into applications and search for "urh" or write "urh" in the terminal
 yes | sudo apt update
 yes | sudo apt install snapd
 yes | sudo snap install urh
 
-# GPS-SDR-SIM --> It might be necessary to go into /etc/gps-sdr-sim-1.0 or directly on github to have some interesting files
+# GPS-SDR-SIM --> test : write "gps-sdr-sim" in the terminal
 sudo wget https://github.com/osqzss/gps-sdr-sim/archive/refs/tags/v1.0.tar.gz
 sudo tar zxvf v1.0.tar.gz
 sudo rm v1.0.tar.gz
@@ -31,12 +31,12 @@ cd gps-sdr-sim-1.0
 sudo make
 sudo cp /etc/gps-sdr-sim-1.0/gps-sdr-sim /usr/local/bin
 cd /etc
+##NOTE --> It might be necessary to go into /etc/gps-sdr-sim-1.0 or directly on github to have some interesting files
 
-
-# Can-utils
+# Can-utils --> test : go into applications and search for "can", you will see the different features (candump, cangen, canplayer, cansend, cansniffer)
 yes | sudo apt install can-utils
 
-# LOIC
+# LOIC --> test : write "loic-tool" in the terminal
 ##MonoDevelop
 yes | sudo apt install apt-transport-https dirmngr
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -53,13 +53,13 @@ source ~/.bashrc
 
 ####NOTE : All of this can also be done with : loic-net4.5.sh
 
-# Bluetoothctl
+# Bluetoothctl --> test : write "bluetoothctl" in the terminal
 ## already installed
 
-# Rfcomm 
+# Rfcomm --> test : write "rfcomm -h" in the terminal
 ## already installed
 
-# Wepattack
+# Wepattack --> test : write "wepattack" in the terminal
 ##Zlib
 yes | sudo apt install zlib1g
 yes | sudo apt install zlib1g-dev
@@ -84,7 +84,7 @@ sudo make
 sudo make install
 cd /etc
 
-# Bluesnarfer
+# Bluesnarfer --> test : write "bluesnarfer" in the terminal
 sudo apt-get install bluetooth libbluetooth-dev -y
 sudo git clone https://github.com/boos/bluesnarfer
 cd bluesnarfer
@@ -93,7 +93,7 @@ echo "alias bluesnarfer='sudo /etc/bluesnarfer/bluesnarfer'" >> ~/.bashrc
 source ~/.bashrc
 cd /etc
 
-# Carwhisperer
+# Carwhisperer --> test : write "carwhisperer" in the terminal
 yes | sudo apt install libbluetooth-dev bluez bluetooth
 sudo wget http://trifinite.org/Downloads/carwhisperer-0.2.tar.gz
 sudo tar zxvf carwhisperer-0.2.tar.gz
@@ -106,7 +106,7 @@ sudo sed -i 's/cw_pin.sh/cw_pin.pl/g' Makefile #Replace some text
 sudo make install
 cd /etc
 
-# Bettercap
+# Bettercap --> test : write "sudo bettercap" in the terminal
 ##build-essential
 sudo apt update -y
 yes | sudo apt install build-essential
@@ -138,7 +138,7 @@ go get github.com/bettercap/bettercap
 sudo cp $HOME/go/bin/bettercap /usr/local/bin
 cd /etc
 
-# Crackle
+# Crackle --> test : write "crackle" in the terminal
 sudo wget http://lacklustre.net/projects/crackle/crackle-0.1.tgz
 sudo tar zxvf crackle-0.1.tgz
 sudo rm crackle-0.1.tgz
@@ -147,25 +147,25 @@ sudo make
 sudo make install
 cd /etc
 
-# Reaver
+# Reaver --> test : write "reaver" in the terminal or go into the applications and search for "reaver"
 yes | sudo apt install reaver
 
-# Hashcat
+# Hashcat --> test : write "hashcat" in the terminal or go into the applications and search for "hashcat"
 ##already installed
 
-# Linsiid
+# Linsiid --> test : write "linssid" in the terminal or go into the applications and search for "linssid"
 yes | sudo apt install linssid
 
-# Binwalk
+# Binwalk --> test : write "binwalk" in the terminal or go into the applications and search for "linssid"
 ##already installed
 
-# Unsquashfs
+# Unsquashfs --> test : write "unsquashfs" in the terminal
 ##already installed
 
-# Ettercap
+# Ettercap --> test : write "unsquashfs" in the terminal or go into the applications and search for "ettercap"
 ##already installed
 
-# Kayak
+# Kayak --> test : write "kayak" in the terminal
 cd /etc
 yes | sudo apt install git
 sudo git clone git://github.com/dschanoeh/Kayak
@@ -177,7 +177,7 @@ echo "alias kayak='sudo bash /etc/Kayak/application/target/kayak/bin/kayak'" >> 
 source ~/.bashrc
 cd /etc
 
-# SavvyCan
+# SavvyCan --> test : write "savvycan" in the terminal
 cd /etc
 sudo mkdir SavvyCan
 cd SavvyCan
@@ -187,13 +187,13 @@ echo "alias savvycan='sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage'" >> ~
 source ~/.bashrc
 cd /etc
 
-# Aircrack-ng
+# Aircrack-ng --> test : write "aircrack-ng" in the terminal or go into the applications and search for "aircrack-ng"
 ##already installed
 
-# Wifite
+# Wifite --> test : write "sudo wifite" in the terminal or go into the applications and search for "wifite"
 ##already installed
 
-# Wifiphisher
+# Wifiphisher --> test : write "sudo wifiphisher" in the terminal
 cd /etc
 yes | sudo apt install git
 sudo git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
@@ -202,9 +202,9 @@ sudo pip3 install -U pip setuptools
 yes | sudo apt-get install libnl-3-dev libnl-genl-3-dev
 yes | sudo apt-get install libssl-dev
 yes | sudo python3 setup.py install # Install any dependencies 
-
-# Bluescan
 cd /etc
+
+# Bluescan --> test : write "bluescan" in the terminal
 yes | sudo apt install python3-pip libcairo2-dev # To solve the installation error "Failed to build pycairo"
 yes | sudo apt install python3-pip python3-dev            # To solve the installation error "Python.h: No such file or directory"
 yes | sudo apt install python3-pip libgirepository1.0-dev # To solve the installation error "Failed building wheel for PyGObject"
@@ -225,17 +225,17 @@ yes | sudo apt-get install python3-distutils
 yes | sudo apt-get install --reinstall python3-apt
 yes | sudo python3.9 -m pip install bluescan
 
-# Bluez
+# Bluez --> can't be tested because it's more like part of some tools
 cd /etc
 yes | sudo apt install bluez
 
-# Btlejack
+# Btlejack --> test : write "btlejack" in the terminal
 cd /etc
 yes | sudo apt-get install python3-pip
 yes | sudo pip3 install btlejack
 ## Warning : the tool need 3 BBC Micro:Bit components plugged in USB in order to correctly work
 
-# Airgeddon
+# Airgeddon --> test : write "airgeddon" in the terminal
 ##Essential tools
 ##iw -> already installed
 ##airmon-ng -> already installed
@@ -250,20 +250,20 @@ sudo rm master.zip
 echo "alias airgeddon='sudo bash /etc/airgeddon-master/airgeddon.sh'" >> ~/.bashrc
 source ~/.bashrc
 
-# BTScanner
+# BTScanner --> test : write "btscanner" in the terminal or go into the applications and search for "btscanner"
 yes | sudo apt-get update
 yes | sudo apt-get install btscanner
 
-# Metasploit
+# Metasploit --> test : write "msfconsole" in the terminal or go into the applications and search for "msfconsole"
 ##already installed
 
-# Nmap
+# Nmap --> test : write "nmap" in the terminal or go into the applications and search for "nmap"
 ##already installed
 
-# Scapy
+# Scapy --> test : write "scapy" in the terminal or go into the applications and search for "scapy"
 ##already installed
 
-# OPENVAS
+# OPENVAS --> test : write "openvas --version" in the terminal
 yes | sudo apt-get update
 yes | sudo apt-get install cmake 
 yes | sudo apt-get install doxygen 
@@ -334,10 +334,10 @@ sudo ldconfig
 sudo openvas -u
 cd /etc
 
-# Gimp
+# Gimp --> test : write "gimp" in the terminal or go into the applications and search for "gimp"
 ##already installed
 
-# ZEEK
+# ZEEK --> test : write "zeek --version" in the terminal
 sudo apt-get update -y
 sudo apt-get install curl gnupg2 wget -y
 
@@ -363,11 +363,11 @@ source ~/.bashrc
 #https://kifarunix.com/install-zeek-on-ubuntu/
 #https://www.atlantic.net/dedicated-server-hosting/how-to-install-zeek-network-security-monitoring-tool-in-ubuntu-20-04/
 
-# Umap2
+# Umap2 --> test : write "umap2emulate" or "umap2scan" or "umap2detect" or "umap2fuzz" in the terminal
 sudo apt install pip
 sudo pip install git+https://github.com/nccgroup/umap2.git
 
-# Wireshark
+# Wireshark --> test : write "wireshark" in the terminal or go into the applications and search for "wireshark"
 ##already installed
 
 # NESSUS
@@ -404,11 +404,11 @@ sudo pip install git+https://github.com/nccgroup/umap2.git
 
 #You have now successfully installed Nessus!
 
-# Snort
-sudo apt install snort
+# Snort --> test : write "sudo snort" in the terminal
+yes | sudo apt install snort
 #To install it, manual steps are required (selection of the interface and the address range)
 
-# Sleuth kit --> test : "mmls -V"
+# Sleuth kit --> test : write "mmls -V" in the terminal
 sudo wget https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.11.1/sleuthkit-4.11.1.tar.gz
 sudo tar zxvf sleuthkit-4.11.1.tar.gz
 sudo rm sleuthkit-4.11.1.tar.gz
@@ -423,10 +423,10 @@ cd /etc
 #To do so, a splunk account is required.
 #It works for every OS existing. 
 
-# Autopsy
-sudo apt-get install -y autopsy
+# Autopsy --> test : write "autopsy" in the terminal or go into the applications and search for "autopsy"
+yes | sudo apt-get install -y autopsy
 
-# Network Miner
+# Network Miner --> test : write "network-miner" in the terminal
 yes | sudo apt install mono-devel
 wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
 sudo unzip /tmp/nm.zip -d /opt/
@@ -446,7 +446,7 @@ sudo apt-get clean && sudo apt-get update
 yes | sudo apt-get upgrade
 #### PROBLEMS
 
-# Dshell
+# Dshell --> test : write "dshell" in the terminal
 sudo apt update -y
 sudo apt install -y git
 sudo apt install -y python3-pip
@@ -463,13 +463,13 @@ sudo apt-get install python3-pcapy
 #Installation
 sudo python3 -m pip install Dshell/
 
-# Kismet
+# Kismet --> test : write "kismet" in the terminal or go into the applications and search for "kismet"
 ##already installed
 
-# Radar2
+# Radare2 --> test : write "radare2" in the terminal or go into the applications and search for "radare2"
 ##already installed
 
-# Ghidra
+# Ghidra --> test : write "ghidra" in the terminal
 sudo apt-get install -y default-jdk
 sudo wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.0.4_build/ghidra_10.0.4_PUBLIC_20210928.zip
 sudo unzip ghidra_10.0.4_PUBLIC_20210928.zip
