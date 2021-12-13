@@ -480,7 +480,7 @@ source ~/.bashrc
 # ICSimulator
 cd /etc
 sudo apt-get install can-utils -y
-sudo apt install git
+sudo apt install git -y
 git clone https://github.com/zombieCraig/ICSim
 cd ICSim/
 sudo ./setup_vcan.sh
