@@ -481,10 +481,10 @@ source ~/.bashrc
 cd /etc
 sudo apt-get install can-utils -y
 sudo apt install git -y
-git clone https://github.com/zombieCraig/ICSim
+sudo git clone https://github.com/zombieCraig/ICSim
 cd ICSim/
 sudo ./setup_vcan.sh
-make
+sudo make
 cd /etc
 
 exit
