@@ -162,7 +162,7 @@ yes | sudo apt install linssid
 # Unsquashfs --> test : write "unsquashfs" in the terminal
 ##already installed
 
-# Ettercap --> test : write "unsquashfs" in the terminal or go into the applications and search for "ettercap"
+# Ettercap --> test : write "ettercap" in the terminal or go into the applications and search for "ettercap"
 ##already installed
 
 # Kayak --> test : write "kayak" in the terminal
