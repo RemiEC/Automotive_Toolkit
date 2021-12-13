@@ -442,16 +442,16 @@ cd /etc
 sudo apt update -y
 sudo apt install -y git
 sudo apt install -y python3-pip
-git clone https://github.com/USArmyResearchLab/Dshell.git
+sudo git clone https://github.com/USArmyResearchLab/Dshell.git
 #dependencies required 
 #geoip2
-pip install geoip2
+sudo pip install geoip2
 #pypacker
-pip install pypacker
+sudo pip install pypacker
 #pyopenssl
-pip install pyopenssl
+sudo pip install pyopenssl
 #pcapy
-sudo apt-get install python3-pcapy
+yes | sudo apt-get install python3-pcapy
 #Installation
 sudo python3 -m pip install Dshell/
 
