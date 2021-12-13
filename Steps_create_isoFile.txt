@@ -1,13 +1,14 @@
-Download the file here on your VM backbox : https://sourceforge.net/projects/pinguy-os/files/ISO_Builder/pinguybuilder-menu-based_5.2-1_all.deb/download
+Go into the folder you want (I suggest you go into /etc)
 
-Then do the following command : sudo gdebi pinguybuilder-menu-based_5.2-1_all.deb
+Download the file here on your VM backbox : sudo wget https://sourceforge.net/projects/pinguy-os/files/ISO_Builder/pinguybuilder-menu-based_5.2-1_all.deb
 
-In case you have problem or to make sure just do the do commands « sudo apt-get install -f » and « sudo apt-get update »
+Then you have to install a package : yes | sudo apt-get install gdebi
+
+Then do the following command : yes | sudo gdebi pinguybuilder-menu-based_5.2-1_all.deb
 
 We can now access the needed program for creating the ISO file by going into applications and search for « pinguy ». We will see some programs beginning by numbers and in our case, the most interesting ones are : 
 	•	2a. Backup (backup-mode) —> Creates an ISO file of the complete system including user data
 	•	2b. Backup (dist-mode) —> Creates an ISO file of the complete system without user data
-
 
 
 SOURCES HELP : https://askubuntu.com/questions/1284926/pinguybuilder-not-installing-on-ubuntu-20-04-because-of-unmet-dependencies
