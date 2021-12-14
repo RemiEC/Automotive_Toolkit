@@ -3,7 +3,7 @@ Toolkit for Pentesting/Security assessment/Forensics EXPLEO - Project Olpexe
 
 ## Information
 
-Here, you can find the toolkit in its ISO version. You can easily use it to create a Virtual Machine, using VMWare for example, by selecting Ubuntu64 from Linux when choosing the OS. 
+Unfortunately, the ISO file is too big for GitHub. However, you can find all the knowledge to create your own ISO. Then, you will easily be able to use it to create a Virtual Machine, using VMWare for example, by selecting Ubuntu64 from Linux when choosing the OS. 
 
 ## Important
 
