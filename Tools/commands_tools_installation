@@ -1,0 +1,330 @@
+#!/usr/bin/bash
+
+### HOW TO LAUNCH THE SCRIPT
+### Please launch it with the following command : "source ./<name_you_gave_to_the_file>"
+### https://stackoverflow.com/questions/2197461/how-to-set-an-alias-inside-a-bash-shell-script-so-that-is-it-visible-from-the-ou
+
+### NOTE --> We will put the aliases in /etc/bash.bashrc instead of ~/.bashrc because the first one is for all users, 
+### including root, whereas the last one is only for the current user.
+
+cd /etc
+
+yes | sudo apt-get update
+
+# GNU RADIO --> test : go into applications and search for "gnuradio"
+yes | sudo apt install gnuradio
+
+# GQRX --> test : go into applications and search for "gqrx" or write "gqrx" in the terminal
+yes | sudo apt install gqrx-sdr
+
+# Inspectrum --> test : write "inspectrum" in the terminal
+yes | sudo apt install inspectrum
+
+# GPS-SDR-SIM --> test : write "gps-sdr-sim" in the terminal
+sudo wget https://github.com/osqzss/gps-sdr-sim/archive/refs/tags/v1.0.tar.gz
+sudo tar zxvf v1.0.tar.gz
+sudo rm v1.0.tar.gz
+cd gps-sdr-sim-1.0
+sudo make
+sudo cp /etc/gps-sdr-sim-1.0/gps-sdr-sim /usr/local/bin
+cd /etc
+##NOTE --> It might be necessary to go into /etc/gps-sdr-sim-1.0 or directly on github to have some interesting files
+
+# Can-utils --> test : go into applications and search for "can", you will see the different features (candump, cangen, canplayer, cansend, cansniffer)
+yes | sudo apt install can-utils
+
+# LOIC --> test : write "loic-tool" in the terminal
+##MonoDevelop
+yes | sudo apt install apt-transport-https dirmngr
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu vs-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-vs.list
+yes | sudo apt update
+yes | sudo apt-get install monodevelop
+
+##Installation
+sudo wget https://raw.githubusercontent.com/NewEraCracker/LOIC/master/loic.sh
+yes | sudo bash ./loic.sh install
+sudo rm loic.sh #don't need this file anymore, it is already in the folder created after the previous command
+echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
+
+####NOTE : All of this can also be done with : loic-net4.5.sh
+
+# Bluetoothctl --> test : write "bluetoothctl" in the terminal
+## already installed
+
+# Rfcomm --> test : write "rfcomm -h" in the terminal
+## already installed
+
+# Wepattack --> test : write "wepattack" in the terminal
+##Zlib
+yes | sudo apt install zlib1g
+yes | sudo apt install zlib1g-dev
+
+##LibPcap
+yes | sudo apt-get update
+yes | sudo apt-get install libpcap-dev
+
+##libCrypto
+yes | sudo apt-get install libssl-dev
+
+##Kismet already here
+
+##Installation
+sudo wget https://downloads.sourceforge.net/project/wepattack/WepAttack/0.1.3/WepAttack-0.1.3.tar.gz
+sudo tar xvfz WepAttack-0.1.3.tar.gz
+sudo rm WepAttack-0.1.3.tar.gz
+cd WepAttack-0.1.3/src
+sudo chmod +x wlan
+sudo sed -i 's/log.o\\/log.o \\/g' Makefile #If we don't do that, there will be an error on line 24 of the Makefile because log.o and modes.o will form only one argument instead of two
+sudo make
+sudo make install
+cd /etc
+
+# Bluesnarfer --> test : write "bluesnarfer" in the terminal
+sudo apt-get install bluetooth libbluetooth-dev -y
+sudo git clone https://github.com/boos/bluesnarfer
+cd bluesnarfer
+sudo make
+echo "alias bluesnarfer='sudo /etc/bluesnarfer/bluesnarfer'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
+cd /etc
+
+# Carwhisperer --> test : write "carwhisperer" in the terminal
+yes | sudo apt install libbluetooth-dev bluez bluetooth
+sudo wget http://trifinite.org/Downloads/carwhisperer-0.2.tar.gz
+sudo tar zxvf carwhisperer-0.2.tar.gz
+sudo rm carwhisperer-0.2.tar.gz
+cd carwhisperer-0.2
+sudo make
+sudo mv hcid.conf main.conf #Rename a file
+sudo sed -i 's/hcid/main/g' Makefile #Replace some text
+sudo sed -i 's/cw_pin.sh/cw_pin.pl/g' Makefile #Replace some text
+sudo make install
+cd /etc
+
+# Bettercap --> test : write "sudo bettercap" in the terminal
+##build-essential
+sudo apt update -y
+yes | sudo apt install build-essential
+
+##libpcap-dev
+sudo apt-get update -y
+yes | sudo apt-get install -y libpcap-dev
+
+##libusb-1.0-0-dev
+sudo apt-get update -y
+yes | sudo apt-get install libusb-1.0-0-dev
+
+##libnetfilter-queue-dev
+sudo apt-get update -y
+yes | sudo apt-get install libnetfilter-queue-dev
+
+##Go
+cd /usr/local
+sudo wget https://go.dev/dl/go1.17.4.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.17.4.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+source $HOME/.profile
+sudo rm go1.17.4.linux-amd64.tar.gz
+export GOPATH=$HOME/go
+export PATH=$PATH:/$GOPATH/bin
+
+##Installation
+go get github.com/bettercap/bettercap
+sudo cp $HOME/go/bin/bettercap /usr/local/bin
+cd /etc
+
+# Crackle --> test : write "crackle" in the terminal
+sudo wget http://lacklustre.net/projects/crackle/crackle-0.1.tgz
+sudo tar zxvf crackle-0.1.tgz
+sudo rm crackle-0.1.tgz
+cd crackle-0.1/
+sudo make
+sudo make install
+cd /etc
+
+# Reaver --> test : write "reaver" in the terminal or go into the applications and search for "reaver"
+yes | sudo apt install reaver
+
+# Hashcat --> test : write "hashcat" in the terminal or go into the applications and search for "hashcat"
+##already installed
+
+# Linsiid --> test : write "linssid" in the terminal or go into the applications and search for "linssid"
+yes | sudo apt install linssid
+
+# Binwalk --> test : write "binwalk" in the terminal or go into the applications and search for "linssid"
+##already installed
+
+# Unsquashfs --> test : write "unsquashfs" in the terminal
+##already installed
+
+# Ettercap --> test : write "ettercap" in the terminal or go into the applications and search for "ettercap"
+##already installed
+
+# Kayak --> test : write "kayak" in the terminal
+cd /etc
+yes | sudo apt install git
+sudo git clone git://github.com/dschanoeh/Kayak
+cd /etc/Kayak
+yes | sudo apt install maven
+sudo mvn clean package
+cd /etc/Kayak/application/target/kayak/bin
+echo "alias kayak='sudo bash /etc/Kayak/application/target/kayak/bin/kayak'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
+cd /etc
+
+# SavvyCan --> test : write "savvycan" in the terminal
+cd /etc
+sudo mkdir SavvyCan
+cd SavvyCan
+sudo wget https://github.com/collin80/SavvyCAN/releases/download/1.0.244/SavvyCAN-11e3b3e-x86_64.AppImage
+sudo chmod +x SavvyCAN-11e3b3e-x86_64.AppImage
+echo "alias savvycan='sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
+cd /etc
+
+# Aircrack-ng --> test : write "aircrack-ng" in the terminal or go into the applications and search for "aircrack-ng"
+##already installed
+
+# Wifite --> test : write "sudo wifite" in the terminal or go into the applications and search for "wifite"
+##already installed
+
+# Wifiphisher --> test : write "sudo wifiphisher" in the terminal
+cd /etc
+yes | sudo apt install git
+sudo git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
+cd wifiphisher # Switch to tool's directory
+sudo apt install python3-pip
+sudo pip3 install -U pip setuptools
+yes | sudo apt-get install libnl-3-dev libnl-genl-3-dev
+yes | sudo apt-get install libssl-dev
+yes | sudo python3 setup.py install # Install any dependencies 
+cd /etc
+
+# Bluescan --> test : write "bluescan" in the terminal
+yes | sudo apt install python3-pip libcairo2-dev # To solve the installation error "Failed to build pycairo"
+yes | sudo apt install python3-pip python3-dev            # To solve the installation error "Python.h: No such file or directory"
+yes | sudo apt install python3-pip libgirepository1.0-dev # To solve the installation error "Failed building wheel for PyGObject"
+yes | sudo apt install python3-pip libbluetooth-dev       # To solve the installation error "bluetooth/bluetooth.h: No such file or directory"
+yes | sudo apt install python3-pip bluez-tools
+
+yes | sudo apt install libglib2.0-dev libdbus-1-dev gir1.2-gtk-3.0 python3-dbus python3-gi python3-gi-cairo
+yes | sudo apt install python3.9 python3.9-dev
+
+##To solve the runtime error "No module named '_dbus_bindings'"
+cd /usr/lib/python3/dist-packages
+sudo cp _dbus_bindings.cpython-38-x86_64-linux-gnu.so _dbus_bindings.cpython-39-x86_64-linux-gnu.so
+sudo cp _dbus_glib_bindings.cpython-38-x86_64-linux-gnu.so _dbus_glib_bindings.cpython-39-x86_64-linux-gnu.so
+cd /etc
+
+##Installation
+yes | sudo apt-get install python3-distutils
+yes | sudo apt-get install --reinstall python3-apt
+yes | sudo python3.9 -m pip install bluescan
+
+# Bluez --> can't be tested because it's more like part of some tools
+cd /etc
+yes | sudo apt install bluez
+
+# Btlejack --> test : write "btlejack" in the terminal
+cd /etc
+yes | sudo apt-get install python3-pip
+yes | sudo pip3 install btlejack
+## Warning : the tool need 3 BBC Micro:Bit components plugged in USB in order to correctly work
+
+# Airgeddon --> test : write "airgeddon" in the terminal
+##Essential tools
+##iw -> already installed
+##airmon-ng -> already installed
+##aircrack-ng -> already installed
+##ip -> already installed
+##ps -> already installed
+
+##Installation
+sudo wget https://github.com/v1s1t0r1sh3r3/airgeddon/archive/master.zip
+sudo unzip master.zip
+sudo rm master.zip
+echo "alias airgeddon='sudo bash /etc/airgeddon-master/airgeddon.sh'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
+
+# BTScanner --> test : write "btscanner" in the terminal or go into the applications and search for "btscanner"
+yes | sudo apt-get update
+yes | sudo apt-get install btscanner
+
+# Metasploit --> test : write "msfconsole" in the terminal or go into the applications and search for "msfconsole"
+##already installed
+
+# Nmap --> test : write "nmap" in the terminal or go into the applications and search for "nmap"
+##already installed
+
+# Scapy --> test : write "scapy" in the terminal or go into the applications and search for "scapy"
+##already installed
+
+# Gimp --> test : write "gimp" in the terminal or go into the applications and search for "gimp"
+##already installed
+
+# Umap2 --> test : write "umap2emulate" or "umap2scan" or "umap2detect" or "umap2fuzz" in the terminal
+sudo apt install pip
+sudo pip install git+https://github.com/nccgroup/umap2.git
+
+# Wireshark --> test : write "wireshark" in the terminal or go into the applications and search for "wireshark"
+##already installed
+
+# Sleuth kit --> test : write "mmls -V" in the terminal
+sudo wget https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.11.1/sleuthkit-4.11.1.tar.gz
+sudo tar zxvf sleuthkit-4.11.1.tar.gz
+sudo rm sleuthkit-4.11.1.tar.gz
+cd sleuthkit-4.11.1/
+sudo ./configure
+sudo make
+sudo make install
+cd /etc
+
+# Autopsy --> test : write "autopsy" in the terminal or go into the applications and search for "autopsy"
+yes | sudo apt-get install -y autopsy
+
+# Network Miner --> test : write "network-miner" in the terminal
+yes | sudo apt install mono-devel
+wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
+sudo unzip /tmp/nm.zip -d /opt/
+cd /opt/NetworkMiner*
+sudo chmod +x NetworkMiner.exe
+sudo chmod -R go+w AssembledFiles/
+sudo chmod -R go+w Captures/
+echo "alias network-miner='mono /opt/NetworkMiner_2-7-2/NetworkMiner.exe --noupdatecheck'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
+cd /etc
+
+# Dshell --> test : write "dshell" in the terminal
+sudo apt update -y
+sudo apt install -y git
+sudo apt install -y python3-pip
+sudo git clone https://github.com/USArmyResearchLab/Dshell.git
+#dependencies required 
+#geoip2
+sudo pip install geoip2
+#pypacker
+sudo pip install pypacker
+#pyopenssl
+sudo pip install pyopenssl
+#pcapy
+yes | sudo apt-get install python3-pcapy
+#Installation
+sudo python3 -m pip install Dshell/
+
+# Kismet --> test : write "kismet" in the terminal or go into the applications and search for "kismet"
+##already installed
+
+# Radare2 --> test : write "radare2" in the terminal or go into the applications and search for "radare2"
+##already installed
+
+# Ghidra --> test : write "ghidra" in the terminal
+sudo apt-get install -y default-jdk
+sudo wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.0.4_build/ghidra_10.0.4_PUBLIC_20210928.zip
+sudo unzip ghidra_10.0.4_PUBLIC_20210928.zip
+sudo rm ghidra_10.0.4_PUBLIC_20210928.zip
+echo "alias ghidra='sudo bash /etc/ghidra_10.0.4_PUBLIC/ghidraRun'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
+
+exit
