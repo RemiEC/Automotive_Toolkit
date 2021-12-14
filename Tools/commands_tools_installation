@@ -195,7 +195,7 @@ cd /etc
 yes | sudo apt install git
 sudo git clone https://github.com/wifiphisher/wifiphisher.git # Download the latest revision
 cd wifiphisher # Switch to tool's directory
-sudo apt install python3-pip
+yes | sudo apt install python3-pip
 sudo pip3 install -U pip setuptools
 yes | sudo apt-get install libnl-3-dev libnl-genl-3-dev
 yes | sudo apt-get install libssl-dev
