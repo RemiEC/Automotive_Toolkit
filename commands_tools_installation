@@ -4,6 +4,8 @@
 ### Please launch it with the following command : "source ./<name_you_gave_to_the_file>"
 ### https://stackoverflow.com/questions/2197461/how-to-set-an-alias-inside-a-bash-shell-script-so-that-is-it-visible-from-the-ou
 
+### NOTE --> We will put the aliases in /etc/bash.bashrc instead of ~/.bashrc because the first one is for all users, 
+### including root, whereas the last one is only for the current user.
 
 cd /etc
 
@@ -48,8 +50,8 @@ yes | sudo apt-get install monodevelop
 sudo wget https://raw.githubusercontent.com/NewEraCracker/LOIC/master/loic.sh
 yes | sudo bash ./loic.sh install
 sudo rm loic.sh #don't need this file anymore, it is already in the folder created after the previous command
-echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" >> ~/.bashrc
-source ~/.bashrc
+echo "alias loic-tool='cd /etc/LOIC && sudo bash ./loic.sh run && exit'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
 
 ####NOTE : All of this can also be done with : loic-net4.5.sh
 
@@ -89,8 +91,8 @@ sudo apt-get install bluetooth libbluetooth-dev -y
 sudo git clone https://github.com/boos/bluesnarfer
 cd bluesnarfer
 sudo make
-echo "alias bluesnarfer='sudo /etc/bluesnarfer/bluesnarfer'" >> ~/.bashrc
-source ~/.bashrc
+echo "alias bluesnarfer='sudo /etc/bluesnarfer/bluesnarfer'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
 cd /etc
 
 # Carwhisperer --> test : write "carwhisperer" in the terminal
@@ -173,8 +175,8 @@ cd /etc/Kayak
 yes | sudo apt install maven
 sudo mvn clean package
 cd /etc/Kayak/application/target/kayak/bin
-echo "alias kayak='sudo bash /etc/Kayak/application/target/kayak/bin/kayak'" >> ~/.bashrc
-source ~/.bashrc
+echo "alias kayak='sudo bash /etc/Kayak/application/target/kayak/bin/kayak'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
 cd /etc
 
 # SavvyCan --> test : write "savvycan" in the terminal
@@ -183,8 +185,8 @@ sudo mkdir SavvyCan
 cd SavvyCan
 sudo wget https://github.com/collin80/SavvyCAN/releases/download/1.0.244/SavvyCAN-11e3b3e-x86_64.AppImage
 sudo chmod +x SavvyCAN-11e3b3e-x86_64.AppImage
-echo "alias savvycan='sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage'" >> ~/.bashrc
-source ~/.bashrc
+echo "alias savvycan='sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
 cd /etc
 
 # Aircrack-ng --> test : write "aircrack-ng" in the terminal or go into the applications and search for "aircrack-ng"
@@ -248,8 +250,8 @@ yes | sudo pip3 install btlejack
 sudo wget https://github.com/v1s1t0r1sh3r3/airgeddon/archive/master.zip
 sudo unzip master.zip
 sudo rm master.zip
-echo "alias airgeddon='sudo bash /etc/airgeddon-master/airgeddon.sh'" >> ~/.bashrc
-source ~/.bashrc
+echo "alias airgeddon='sudo bash /etc/airgeddon-master/airgeddon.sh'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
 
 # BTScanner --> test : write "btscanner" in the terminal or go into the applications and search for "btscanner"
 yes | sudo apt-get update
@@ -435,8 +437,8 @@ cd /opt/NetworkMiner*
 sudo chmod +x NetworkMiner.exe
 sudo chmod -R go+w AssembledFiles/
 sudo chmod -R go+w Captures/
-echo "alias network-miner='mono /opt/NetworkMiner_2-7-2/NetworkMiner.exe --noupdatecheck'" >> ~/.bashrc
-source ~/.bashrc
+echo "alias network-miner='mono /opt/NetworkMiner_2-7-2/NetworkMiner.exe --noupdatecheck'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
 cd /etc
 
 # Dshell --> test : write "dshell" in the terminal
@@ -467,7 +469,7 @@ sudo apt-get install -y default-jdk
 sudo wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.0.4_build/ghidra_10.0.4_PUBLIC_20210928.zip
 sudo unzip ghidra_10.0.4_PUBLIC_20210928.zip
 sudo rm ghidra_10.0.4_PUBLIC_20210928.zip
-echo "alias ghidra='sudo bash /etc/ghidra_10.0.4_PUBLIC/ghidraRun'" >> ~/.bashrc
-source ~/.bashrc
+echo "alias ghidra='sudo bash /etc/ghidra_10.0.4_PUBLIC/ghidraRun'" | sudo tee -a /etc/bash.bashrc
+source /etc/bash.bashrc
 
 exit
