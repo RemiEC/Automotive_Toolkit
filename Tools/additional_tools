@@ -10,9 +10,9 @@ cd /etc
 yes | sudo apt-get update
 
 # Universal Radio Hacker (URH) --> test : go into applications and search for "urh" or write "urh" in the terminal
-yes | sudo apt update
-yes | sudo apt install snapd
-yes | sudo snap install urh
+#yes | sudo apt update
+#yes | sudo apt install snapd
+#yes | sudo snap install urh
 
 # OPENVAS --> test : write "openvas --version" in the terminal
 yes | sudo apt-get update
@@ -113,7 +113,7 @@ source /etc/bash.bashrc
 
 
 # Snort --> test : write "sudo snort" in the terminal
-yes | sudo apt install snort
+#yes | sudo apt install snort
 #To install it, manual steps are required (selection of the interface and the address range)
 
 
