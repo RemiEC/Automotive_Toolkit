@@ -103,6 +103,7 @@ sudo sed -i 's/cw_pin.sh/cw_pin.pl/g' Makefile #Replace some text
 sudo make install
 cd /etc
 
+<<comments
 # Bettercap --> test : write "sudo bettercap" in the terminal
 ##build-essential
 sudo apt update -y
@@ -134,6 +135,7 @@ export PATH=$PATH:/$GOPATH/bin
 go get github.com/bettercap/bettercap
 sudo cp $HOME/go/bin/bettercap /usr/local/bin
 cd /etc
+comments
 
 # Crackle --> test : write "crackle" in the terminal
 sudo wget http://lacklustre.net/projects/crackle/crackle-0.1.tgz
@@ -174,6 +176,7 @@ echo "alias kayak='sudo bash /etc/Kayak/application/target/kayak/bin/kayak'" | s
 source /etc/bash.bashrc
 cd /etc
 
+<<comments
 # SavvyCan --> test : write "savvycan" in the terminal
 cd /etc
 sudo mkdir SavvyCan
@@ -183,6 +186,7 @@ sudo chmod +x SavvyCAN-11e3b3e-x86_64.AppImage
 echo "alias savvycan='sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage'" | sudo tee -a /etc/bash.bashrc
 source /etc/bash.bashrc
 cd /etc
+comments
 
 # Aircrack-ng --> test : write "aircrack-ng" in the terminal or go into the applications and search for "aircrack-ng"
 ##already installed
@@ -190,6 +194,7 @@ cd /etc
 # Wifite --> test : write "sudo wifite" in the terminal or go into the applications and search for "wifite"
 ##already installed
 
+<<comments
 # Wifiphisher --> test : write "sudo wifiphisher" in the terminal
 cd /etc
 yes | sudo apt install git
@@ -201,6 +206,7 @@ yes | sudo apt-get install libnl-3-dev libnl-genl-3-dev
 yes | sudo apt-get install libssl-dev
 yes | sudo python3 setup.py install # Install any dependencies 
 cd /etc
+comments
 
 # Bluescan --> test : write "bluescan" in the terminal
 yes | sudo apt install python3-pip libcairo2-dev # To solve the installation error "Failed to build pycairo"
@@ -284,6 +290,7 @@ cd /etc
 # Autopsy --> test : write "autopsy" in the terminal or go into the applications and search for "autopsy"
 yes | sudo apt-get install -y autopsy
 
+<<comments
 # Network Miner --> test : write "network-miner" in the terminal
 yes | sudo apt install mono-devel
 wget https://www.netresec.com/?download=NetworkMiner -O /tmp/nm.zip
@@ -295,6 +302,7 @@ sudo chmod -R go+w Captures/
 echo "alias network-miner='mono /opt/NetworkMiner_2-7-2/NetworkMiner.exe --noupdatecheck'" | sudo tee -a /etc/bash.bashrc
 source /etc/bash.bashrc
 cd /etc
+comments
 
 # Dshell --> test : write "dshell" in the terminal
 sudo apt update -y
