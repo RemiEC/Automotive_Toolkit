@@ -4,8 +4,8 @@ Please run the bash file in order to delete the unwanted files
 
 # Add new folder into applications menu
 
-Put all the desktop files in /usr/share/$USER/applications   
-Put all the directory files in /usr/share/$USER/desktop-directories  
+Put all the desktop files in /usr/share/backbox/applications   
+Put all the directory files in /usr/share/backbox/desktop-directories  
   
 In order to add a folder containing some applications, you also have to modify the /etc/xdg/xdg-backbox/menus/xfce-applications.menu :
 * Add a line in the "Layout" part like "<Menuname>BackBox-Pentest</Menuname>"
