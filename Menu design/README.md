@@ -3,7 +3,7 @@ Put all the directory files in /usr/share/$USER/desktop-directories
   
 In order to add a folder containing some applications, you also have to modify the /etc/xdg/xdg-backbox/menus/xfce-applications.menu :
 * Add a line in the "Layout" part like "<Menuname>BackBox-Pentest</Menuname>"
-* Add a paragraph like the following, careful to put the right .directoy file and for the category you can put the same as the .directory file :
+* Add a paragraph like the following, careful to put the right .directoy file and for the category you can put the same as the .directory filename :
 ```xml
 <Menu>
     <Name>BackBox-Pentest</Name>
