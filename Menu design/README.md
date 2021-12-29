@@ -4,9 +4,8 @@ Please run the bash file in order to delete the unwanted files
 
 # Add new folder into applications menu
 
-Put all the desktop files in /usr/share/backbox/applications   
-  except these ones which must be placed in /usr/share/applications
-    gnuradio-grc.desktop
+Put all the desktop files from the usr_share_backbox in /usr/share/backbox/applications   
+Put all the desktop files from the usr_share_applications in /usr/share/applications 
 Put all the directory files in /usr/share/backbox/desktop-directories  
   
 Replace the /etc/xdg/xdg-backbox/menus/xfce-applications.menu by the one provided above.
