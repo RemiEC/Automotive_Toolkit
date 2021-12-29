@@ -9,5 +9,5 @@ cd /usr/share/desktop-directories
 sudo rm Game.directory
 
 # Here are the custom directory files 
-cd /usr/share/$USER/desktop-directories
-sudo rm <SOMETHING>
+#cd /usr/share/$USER/desktop-directories
+#sudo rm <SOMETHING>
