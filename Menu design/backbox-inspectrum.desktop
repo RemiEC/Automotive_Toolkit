@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=inspectrum
+Comment=Open inspectrum tool
+TryExec= inspectrum
+Exec=sh -c "inspectrum; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;

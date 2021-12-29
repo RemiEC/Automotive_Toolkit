@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+# Here are the custom applications (.desktop) files
+cd /usr/share/$USER/applications
+sudo rm backbox-arp-scan.desktop backbox-masscan.desktop backbox-nbtscan.desktop backbox-p0f.desktop backbox-xprobe.desktop backbox-dirb.desktop backbox-whatweb.desktop backbox-nikto.desktop backbox-sqlmap.desktop backbox-hashcat.desktop backbox-chntpw.desktop backbox-fcrackzip.desktop backbox-pdfcrack.desktop backbox-medusa.desktop backbox-patator.desktop backbox-driftnet.desktop backbox-dsniff.desktop backbox-mitmproxy.desktop backbox-sslsniff.desktop backbox-tcpdump.desktop backbox-yersinia.desktop backbox-cryptcat.desktop backbox-iodine.desktop backbox-proxychains.desktop backbox-ptunnel.desktop backbox-weevely.desktop backbox-flasm.desktop backbox-nasm.desktop backbox-radare2.desktop backbox-.desktop backbox-setoolkit.desktop backbox-siege.desktop backbox-slowhttptest.desktop backbox-rifiuti2.desktop backbox-galleta.desktop backbox-pasco.desktop backbox-steghide.desktop backbox-vinetto.desktop backbox-yara.desktop backbox-adb.desktop backbox-dex2jar.desktop backbox-fastboot.desktop backbox-jd-gui.desktop backbox-hping3.desktop backbox-thc-ipv6.desktop																																																						
+
+# Here are the default directory files
+cd /usr/share/desktop-directories
+sudo rm Game.directory
+
+# Here are the custom directory files 
+cd /usr/share/$USER/desktop-directories
+sudo rm <SOMETHING>
