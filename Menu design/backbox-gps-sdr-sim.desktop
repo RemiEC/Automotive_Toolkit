@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=gps-sdr-sim
+Comment=Open gps-sdr-sim tool
+TryExec= gps-sdr-sim
+Exec=sh -c "gps-sdr-sim; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;
