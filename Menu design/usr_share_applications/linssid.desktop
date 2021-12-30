@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=LinSSID
+GenericName=
+Comment=Find local wireless attach points
+Exec=linssid-pkexec
+Icon=/usr/share/pixmaps/linssid48.png
+Terminal=false
+Type=Application
+Categories=BackBox-Pentest;BackBox-Forensics
+Name[en]=LinSSID
+Name[en_US]=LinSSID
+Keywords=Network;Wireless;WiFi;Monitor;Channel;Power
