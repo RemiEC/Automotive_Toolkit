@@ -2,7 +2,6 @@
 Type=Application
 Name=rfcomm
 Comment=Launch rfcomm tool
-TryExec=rfcomm
 Exec=sh -c "rfcomm -h; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
