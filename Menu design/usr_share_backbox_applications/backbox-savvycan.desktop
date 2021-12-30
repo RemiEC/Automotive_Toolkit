@@ -5,4 +5,4 @@ Comment=Launch SavvyCan
 Exec=bash -ic "savvycan; echo; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=True
-Categories=BackBox-Pentest;
+Categories=BackBox-Pentest;BackBox-Security-Assessment;
