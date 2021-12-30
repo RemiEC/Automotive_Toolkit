@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=cangen
-Comment=Generate random CAN traffic
-TryExec=cangen
-Exec=sh -c "cangen --help; ${SHELL:-bash}"
+Name=canplayer
+Comment=Replay CAN logfiles
+TryExec=canplayer
+Exec=sh -c "canplayer --help; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
 Categories=BackBox-AutomotiveAnalysis;
