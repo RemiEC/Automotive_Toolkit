@@ -24,7 +24,7 @@
         <Menuname>BackBox-Services</Menuname>
         <Menuname>BackBox-Pentest</Menuname>
         <Menuname>BackBox-Security-Assessment</Menuname>
-	      <Menuname>BackBox-Forensics</Menuname>
+	<Menuname>BackBox-Forensics</Menuname>
         <Separator/>
         <Filename>xfce-settings-manager.desktop</Filename>
         <Separator/>
