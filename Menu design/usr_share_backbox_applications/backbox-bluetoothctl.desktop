@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=bluetoothctl
+Comment=Launch bluetoothctl tool
+TryExec=bluetoothctl
+Exec=sh -c "bluetoothctl --help; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;
