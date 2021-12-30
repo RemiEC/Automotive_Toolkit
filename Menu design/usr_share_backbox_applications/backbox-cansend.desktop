@@ -6,4 +6,4 @@ TryExec=cansend
 Exec=sh -c "cansend --help; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
-Categories=BackBox-AutomotiveAnalysis;
+Categories=BackBox-Pentest;
