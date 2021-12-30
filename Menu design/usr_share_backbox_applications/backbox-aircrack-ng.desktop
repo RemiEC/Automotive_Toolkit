@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=aircrack-ng
+Comment=Wireless WEP/WPA cracking utilities
+TryExec=aircrack-ng
+Exec=sh -c "echo 'Wireless WEP/WPA cracking utilities'; echo; ls /usr/bin/air*-ng && ls /usr/sbin/air*-ng; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;
