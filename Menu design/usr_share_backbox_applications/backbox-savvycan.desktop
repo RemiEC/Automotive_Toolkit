@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=SavvyCan
+Comment=Launch SavvyCan
+Exec=bash -ic "savvycan; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=True
+Categories=BackBox-Pentest;
