@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=crackle
+Comment=Launch crackle tool
+Exec=sh -c "crackle; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;

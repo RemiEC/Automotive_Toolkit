@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=reaver
+Comment=Brute force attack against WPS
+Exec=sh -c "reaver -h; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;
