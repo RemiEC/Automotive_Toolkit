@@ -2,7 +2,6 @@
 Type=Application
 Name=wepattack
 Comment=Launch wepattack tool
-TryExec=bluetoothctl
 Exec=sh -c "wepattack; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
