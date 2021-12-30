@@ -2,7 +2,6 @@
 Type=Application
 Name=cansniffer
 Comment=Display CAN data content differences
-TryExec=cansniffer
 Exec=sh -c "cansniffer --help; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
