@@ -2,5 +2,5 @@
 Type=Directory
 X-Ubuntu-Gettext-Domain=gnome-menus-3.0
 Name=Forensics
-Icon=Folder
+Icon=folder
 Comment=Forensics
