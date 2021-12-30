@@ -2,7 +2,6 @@
 Type=Application
 Name=candump
 Comment=Display, filter and log CAN data to files
-TryExec=candump
 Exec=sh -c "candump --help; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
