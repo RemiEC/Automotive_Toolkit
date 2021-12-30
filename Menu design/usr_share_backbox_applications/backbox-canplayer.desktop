@@ -6,4 +6,4 @@ TryExec=canplayer
 Exec=sh -c "canplayer --help; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
-Categories=BackBox-AutomotiveAnalysis;
+Categories=BackBox-Pentest;
