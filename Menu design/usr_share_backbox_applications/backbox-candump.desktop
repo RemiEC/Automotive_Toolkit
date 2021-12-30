@@ -6,4 +6,4 @@ TryExec=candump
 Exec=sh -c "candump --help; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
-Categories=BackBox-AutomotiveAnalysis;
+Categories=BackBox-Pentest;
