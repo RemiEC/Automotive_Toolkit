@@ -6,4 +6,4 @@ TryExec=aircrack-ng
 Exec=sh -c "echo 'Wireless WEP/WPA cracking utilities'; echo; ls /usr/bin/air*-ng && ls /usr/sbin/air*-ng; echo; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
-Categories=BackBox-Pentest;
+Categories=BackBox-Pentest;BackBox-Security-Assessment;
