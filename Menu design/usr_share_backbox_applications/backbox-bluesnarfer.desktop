@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=bluesnarfer
+Comment=Open bluesnarfer tool
+TryExec= bluesnarfer
+Exec=bash -ic "bluesnarfer; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;
