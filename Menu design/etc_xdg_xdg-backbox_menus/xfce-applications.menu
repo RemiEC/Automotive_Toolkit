@@ -22,7 +22,9 @@
         <Menuname>BackBox-Auditing</Menuname>
         <Menuname>BackBox-Anonymous</Menuname>
         <Menuname>BackBox-Services</Menuname>
-<Menuname>BackBox-Pentest</Menuname>
+        <Menuname>BackBox-Pentest</Menuname>
+        <Menuname>BackBox-Security-Assessment</Menuname>
+	      <Menuname>BackBox-Forensics</Menuname>
         <Separator/>
         <Filename>xfce-settings-manager.desktop</Filename>
         <Separator/>
@@ -33,6 +35,42 @@
         <Separator/>
         <Filename>xfce4-session-logout.desktop</Filename>
     </Layout>
+    
+    <Menu>
+        <Name>BackBox-Pentest</Name>
+        <Directory>BackBox-Pentest.directory</Directory>
+        <Include>
+            <Category>BackBox-Pentest</Category>
+        </Include>
+        <Layout>
+            <Merge type="menus"/>
+            <Merge type="files"/>
+        </Layout>
+    </Menu>
+    
+    <Menu>
+        <Name>BackBox-Security-Assessment</Name>
+        <Directory>BackBox-Security-Assessment.directory</Directory>
+        <Include>
+            <Category>BackBox-Security-Assessment</Category>
+        </Include>
+        <Layout>
+            <Merge type="menus"/>
+            <Merge type="files"/>
+        </Layout>
+    </Menu>
+
+    <Menu>
+        <Name>BackBox-Forensics</Name>
+        <Directory>BackBox-Forensics.directory</Directory>
+        <Include>
+            <Category>BackBox-Forensics</Category>
+        </Include>
+        <Layout>
+            <Merge type="menus"/>
+            <Merge type="files"/>
+        </Layout>
+    </Menu>
 
     <Menu>
         <Name>BackBox-Anonymous</Name>
@@ -45,19 +83,6 @@
             <Merge type="files"/>
         </Layout>
     </Menu>
-
-<Menu>
-    <Name>BackBox-Pentest</Name>
-    <Directory>BackBox-Pentest.directory</Directory>
-    <Include>
-        <Category>BackBox-Pentest</Category>
-    </Include>
-    <Layout>
-        <Merge type="menus"/>
-        <Merge type="files"/>
-    </Layout>
-</Menu>
-
 
     <Menu>
         <Name>BackBox-Auditing</Name>
