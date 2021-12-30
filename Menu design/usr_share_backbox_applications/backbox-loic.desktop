@@ -2,7 +2,6 @@
 Type=Application
 Name=loic
 Comment=Open loic tool
-TryExec= loic
 Exec=bash -ic "loic-tool; echo; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
