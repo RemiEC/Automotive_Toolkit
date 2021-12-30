@@ -2,7 +2,6 @@
 Type=Application
 Name=cansend
 Comment=Send a single frame
-TryExec=cansend
 Exec=sh -c "cansend --help; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
