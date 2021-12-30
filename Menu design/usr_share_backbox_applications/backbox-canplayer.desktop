@@ -2,7 +2,6 @@
 Type=Application
 Name=canplayer
 Comment=Replay CAN logfiles
-TryExec=canplayer
 Exec=sh -c "canplayer --help; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
