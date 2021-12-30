@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Kayak
+Comment=Launch the Kayak Tool
+Exec=bash -ic "kayak; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=True
+Categories=BackBox-Pentest;
