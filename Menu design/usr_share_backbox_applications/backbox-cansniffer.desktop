@@ -6,4 +6,4 @@ TryExec=cansniffer
 Exec=sh -c "cansniffer --help; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
-Categories=BackBox-AutomotiveAnalysis;
+Categories=BackBox-Pentest;
