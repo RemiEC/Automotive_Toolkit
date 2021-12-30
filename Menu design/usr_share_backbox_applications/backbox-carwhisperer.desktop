@@ -2,7 +2,6 @@
 Type=Application
 Name=carwhisperer
 Comment=Open carwhisperer tool
-TryExec= carwhisperer
 Exec=sh -c "carwhisperer; ${SHELL:-bash}"
 Icon=utilities-terminal
 Terminal=true
