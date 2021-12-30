@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=binwalk
+Comment=Firmware Analysis Tool
+TryExec=binwalk
+Exec=sh -c "binwalk -h; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Forensics;
