@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=autopsy
+Comment=Digital forensics platform and GUI to The Sleuth Kit
+Exec=sh -c "sudo autopsy; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Forensics;
