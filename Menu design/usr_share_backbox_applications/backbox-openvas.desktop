@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Openvas
+Comment=Launch Openvas
+Exec=sh -c "openvas -h; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Security-Assessment;

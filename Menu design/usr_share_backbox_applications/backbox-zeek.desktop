@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=zeek
+Comment=Launch Zeek tool
+Exec=sh -c "zeek --version; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Security-Assessment;

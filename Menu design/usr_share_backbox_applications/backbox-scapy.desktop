@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=scapy
+Comment=Packet generator/sniffer and network scanner/discovery
+TryExec=scapy
+Exec=sh -c "scapy -h; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Security-Assessment;

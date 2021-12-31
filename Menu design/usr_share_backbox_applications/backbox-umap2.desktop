@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=umap2
+Comment=Launch umap2 tool
+Exec=sh -c "umap2emulate;umap2scan;umap2detect;umap2fuzz; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Security-Assessment;
