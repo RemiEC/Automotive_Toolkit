@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Bettercap
+Comment=launch bettercap tool
+Exec=sh -c "bettercap --help; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;

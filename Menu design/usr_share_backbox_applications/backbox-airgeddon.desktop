@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=airgeddon
+Comment=Launch airgeddon tool
+Exec=bash -ic "airgeddon ; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Security-Assessment;

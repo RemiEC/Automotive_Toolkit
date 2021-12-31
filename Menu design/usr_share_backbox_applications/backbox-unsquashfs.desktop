@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Unsquashfs
+Comment=Launch unsquashfs tool
+Exec=sh -c "unsquashfs --help; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Forensics;

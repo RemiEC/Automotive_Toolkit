@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=btlejack
+Comment=Launch btlejack tool
+Exec=sh -c "btlejack ; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Security-Assessment;

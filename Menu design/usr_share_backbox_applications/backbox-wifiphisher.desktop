@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Wifiphisher
+Comment=launch Wifiphisher tool
+Exec=sh -c "wifiphisher -h; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Security-Assessment;

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=btscanner
+Comment=ncurses-based scanner for Bluetooth devices
+TryExec=btscanner
+Exec=sh -c "btscanner --help; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Security-Assessment;

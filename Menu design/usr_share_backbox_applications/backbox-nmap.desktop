@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=nmap
+Comment=The Network Mapper
+TryExec=nmap
+Exec=sh -c "nmap; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Security-Assessment;BackBox-Forensics;

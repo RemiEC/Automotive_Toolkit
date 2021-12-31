@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=msfconsole
+Comment=Metasploit Framework
+TryExec=msfconsole
+Exec=sh -c "msfconsole; echo; ${SHELL:-bash}"
+Icon=metasploit-icon
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Security-Assessment;BackBox-Forensics;

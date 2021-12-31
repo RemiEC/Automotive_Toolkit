@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=wifite
+Comment=Python script to automate wireless auditing
+TryExec=wifite
+Exec=sh -c "wifite -h; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Security-Assessment;

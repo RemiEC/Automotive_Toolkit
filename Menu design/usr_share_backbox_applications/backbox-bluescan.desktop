@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=bluescan
+Comment=Launch bluescan tool
+Exec=sh -c "bluescan --help; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Pentest;BackBox-Security-Assessment;

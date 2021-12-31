@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Sleuth Kit
+Comment=launch Sleuth Kit
+Exec=sh -c "mmls --help; echo; ${SHELL:-bash}"
+Icon=utilities-terminal
+Terminal=true
+Categories=BackBox-Forensics;
