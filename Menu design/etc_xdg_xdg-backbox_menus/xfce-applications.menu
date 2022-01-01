@@ -19,7 +19,7 @@
         <Filename>exo-web-browser.desktop</Filename>
         <Filename>exo-mail-reader.desktop</Filename>
         <Separator/>
-        <Menuname>BackBox-Native Tools</Menuname>
+        <Menuname>BackBox-Native-Tools</Menuname>
         <Menuname>BackBox-Anonymous</Menuname>
         <Menuname>BackBox-Services</Menuname>
         <Menuname>BackBox-Pentest</Menuname>
