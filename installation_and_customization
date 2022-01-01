@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+## SCRIPT TO RUN IN ORDER TO CUSTOMIZE BACKBOX BEFORE MAKING THE ISO
+
 # Remove some backbox native applications/tools and the associated desktop files
 # For default applications/tools, .desktop files are deleted when removing the associated applications/tools
 # However for some of the custom ones, we have to delete them manually
