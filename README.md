@@ -12,7 +12,3 @@ NB : You need at least 30Go if you want to add persistance to your Virtual Machi
 In the "Tools" folder, you will find another README file which you can read if you want to know what this folder contains.
 
 NB : On the toolkit, you can find it in "/opt".
-
-## Steps to create the ISO
-
-TO DO ...
