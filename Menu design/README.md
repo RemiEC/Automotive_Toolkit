@@ -1,7 +1,3 @@
-# First thing to do
-
-Please run the bash file in order to delete the unwanted files
-
 # Add new folder into applications menu
 
 Put all the desktop files from the usr_share_backbox in /usr/share/backbox/applications   
