@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+
+
+cd /tmp
+sudo wget https://github.com/RemiEC/Automotive_Toolkit/archive/refs/heads/master.zip
+sudo unzip master.zip
+sudo cp ./Automotive_Toolkit-master/Menu\ design/usr_share_backbox_applications/* /usr/share/backbox/applications
+sudo cp ./Automotive_Toolkit-master/Menu\ design/usr_share_backbox_desktop-directories/* /usr/share/backbox/desktop-directories
+sudo cp ./Automotive_Toolkit-master/Menu\ design/usr_share_applications/* /usr/share/applications
+sudo cp ./Automotive_Toolkit-master/Menu\ design/etc_xdg_xdg-backbox_menus/xfce-applications.menu /etc/xdg/xdg-backbox/menus
+sudo rm /usr/share/backbox/desktop-directories/BackBox-Auditing.directory
+sudo rm master.zip
+sudo rm Automotive_Toolkit-master
+
