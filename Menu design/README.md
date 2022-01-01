@@ -1,3 +1,7 @@
+# Information
+
+In this folder, you can find all the files required to customize the application menu. 
+
 # Add new folder into applications menu
 
 Put all the desktop files from the usr_share_backbox in /usr/share/backbox/applications   
