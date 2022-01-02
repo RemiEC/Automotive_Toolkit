@@ -11,6 +11,8 @@ NB : You need at least 15Go if you want to add persistance to your Virtual Machi
 
 In the "Tools" folder, you will find another README file which you can read if you want to know what this folder contains.
 
+NB : On the toolkit, you can find it in "/opt".
+
 ## Create your own ISO file
 
 To create your own ISO file, you can simply launch the script "installation_and_customization" and then create the ISO (with PinguyBuilder or Cubic for example).
