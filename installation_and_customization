@@ -28,3 +28,5 @@ sudo cp -r /tmp/Automotive_Toolkit-master/Tools /opt
 # Remove the git folder
 sudo rm /tmp/master.zip
 sudo rm -r /tmp/Automotive_Toolkit-master
+
+exit
