@@ -20,6 +20,9 @@ source /tmp/Automotive_Toolkit-master/Tools/commands_tools_installation
 # Customize the application menu
 sudo bash /tmp/Automotive_Toolkit-master/Menu\ design/app_menu_customization
 
+# Put the Tools folder in /opt
+sudo cp -r /tmp/Automotive_Toolkit-master/Tools /opt
+
 # Remove the git folder
 sudo rm /tmp/master.zip
 sudo rm -r /tmp/Automotive_Toolkit-master
