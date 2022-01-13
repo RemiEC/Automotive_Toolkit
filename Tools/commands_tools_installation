@@ -176,7 +176,6 @@ echo "alias kayak='sudo bash /etc/Kayak/application/target/kayak/bin/kayak'" | s
 source /etc/bash.bashrc
 cd /etc
 
-<<comments
 # SavvyCan --> test : write "savvycan" in the terminal
 cd /etc
 sudo mkdir SavvyCan
@@ -186,7 +185,6 @@ sudo chmod +x SavvyCAN-11e3b3e-x86_64.AppImage
 echo "alias savvycan='sudo /etc/SavvyCan/SavvyCAN-11e3b3e-x86_64.AppImage'" | sudo tee -a /etc/bash.bashrc
 source /etc/bash.bashrc
 cd /etc
-comments
 
 # Aircrack-ng --> test : write "aircrack-ng" in the terminal or go into the applications and search for "aircrack-ng"
 ##already installed
